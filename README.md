@@ -30,7 +30,10 @@ mod1['tiger_oil_volume']=mod1['tiger_oil_volume'].clip(upper=up_o_vol.max())
 
 e) TIGER 자료에 비해 KDOEX 자료는 더 길이가 짧기 때문에 standard 정규화를 사용하면 outlier에 더 큰 영향을 받을 것으로 판단-> (TIGER->Standard, KODEX-> robust)
 
-f) feature importance 그래프를 참고하여 하위 5개 컬럼을 drop 하였다
+f) feature importance 그래프를 참고하여 하위 5개 컬럼을 drop 하였다.
+
+g) grid search 대신 Bayesian Optimization 사용
+
 
 
 ## 3. 결과를 이용한 단순 백테스팅
@@ -42,12 +45,13 @@ b) 가격 등락 여부를 예측한 결과 가격 상승이 예측된 경우 �
 c) 슬리피지, 수수료 등을 고려하여 거래비용이 매 거래 시 0.215%가 발생한다고 단순화
 
 d)
-tiger etf 수익률: return      1.678832
-strategy    1.579691
-dtype: float64
-kodex etf 수익률: return      1.210390
-strategy    1.194259
+tiger etf 수익률: return      1.671533
 
+tiger_strategy    2.814908
+
+kodex etf 수익률: return      1.206234
+
+kodex_strategy    1.259281
 
 
 
